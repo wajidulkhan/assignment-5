@@ -82,45 +82,50 @@
       <!-- Card -->
       <section class="border">
         <div
-          class="w-[436px] h-[360px] border border-red-700 bg-white shadow-md"
+          class="w-[436px] h-[330px] border border-red-700 bg-white shadow-md mt-4 rounded-md"
         >
           <!-- card-logo -->
           <div class="flex justify-between items-center m-5">
-            <div class="p-3 bg-[#FFE3E2] rounded-full">
-              <img
-                class="h-[32px] w-[32px]"
-                src="./assets/emergency.png"
-                alt=""
-              />
+            <div class="p-3 bg-[#FFE3E2] rounded-xl">
+              <img class="h-12 w-12" src="./assets/emergency.png" alt="" />
             </div>
             <div>
-              <i class="fa-regular fa-heart text-2xl"></i>
-            </div>
-          </div>
-
-          <div>
-            <h3>National Emergency Number</h3>
-            <p>National Emergency</p>
-          </div>
-
-          <div>
-            <h3>999</h3>
-            <span>All</span>
-          </div>
-
-          <div class="flex">
-            <!-- Button Right -->
-            <div>
-              <button>
-                <span><i class="fa-regular fa-copy"></i></span>Copy
+              <button
+                class="text-gray-500 hover:text-red-500 transition-colors duration-300"
+              >
+                <i class="fa-regular fa-heart text-3xl"></i>
               </button>
             </div>
-            <!-- Button Right -->
-            <div>
-              <button>
-                <span><i class="fa-solid fa-phone-volume"></i></span>Call
-              </button>
-            </div>
+          </div>
+
+          <div class="mx-3">
+            <h3 class="text-xl font-bold text-gray-800">
+              National Emergency Number
+            </h3>
+            <p class="text-sm text-gray-500">National Emergency</p>
+          </div>
+
+          <div class="mt-3 mx-3">
+            <h3 class="text-3xl font-bold text-gray-900">999</h3>
+            <span class="px-3 py-1 bg-gray-100 text-sm rounded-full">All</span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-3 mt-3 mx-3">
+            <!-- Copy Button -->
+            <button
+              class="flex items-center justify-center gap-2 py-2 px-4 border border-gray-400 rounded-lg w-full sm:w-[183px] h-[40px] hover:bg-gray-100 hover:shadow-md hover:scale-105 transition-all duration-300 ease-in-out"
+            >
+              <i class="fa-regular fa-copy"></i>
+              Copy
+            </button>
+
+            <!-- Call Button -->
+            <button
+              class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg text-white bg-[#00a63e] w-full sm:w-[183px] h-[40px] hover:bg-green-700 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
+            >
+              <i class="fa-solid fa-phone-volume"></i>
+              Call
+            </button>
           </div>
         </div>
       </section>
