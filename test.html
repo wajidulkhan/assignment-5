@@ -3,79 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Full Row Sidebar Card</title>
+    <title>Card Control</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
   </head>
   <body class="bg-gray-100 p-6">
-    <section class="grid grid-cols-4 gap-6">
-      <!-- Left Section (Normal Cards) -->
-      <div
-        class="col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
+    <div class="flex gap-4">
+      <!-- Left section -->
+      <main class="w-2/3 space-y-4">
         <!-- Card 1 -->
-        <div class="bg-white shadow-md rounded-md border border-red-700 p-4">
-          <h3 class="text-lg font-bold text-gray-800">Card 1</h3>
-          <p class="text-sm text-gray-500">This is a normal card.</p>
+        <div class="bg-white rounded-lg shadow p-4">
+          <h3 class="text-lg font-bold">Person One</h3>
+          <h3 class="text-2xl">01712345678</h3>
+          <div class="flex gap-3 mt-3">
+            <button class="love-btn bg-red-100 px-3 py-1 rounded">❤️</button>
+            <button class="call-btn bg-green-100 px-3 py-1 rounded">📞</button>
+            <button class="copy-btn bg-blue-100 px-3 py-1 rounded">📋</button>
+          </div>
         </div>
-
         <!-- Card 2 -->
-        <div class="bg-white shadow-md rounded-md border border-red-700 p-4">
-          <h3 class="text-lg font-bold text-gray-800">Card 2</h3>
-          <p class="text-sm text-gray-500">This is another card.</p>
+        <div class="bg-white rounded-lg shadow p-4">
+          <h3 class="text-lg font-bold">Person Two</h3>
+          <h3 class="text-2xl">01898765432</h3>
+          <div class="flex gap-3 mt-3">
+            <button class="love-btn bg-red-100 px-3 py-1 rounded">❤️</button>
+            <button class="call-btn bg-green-100 px-3 py-1 rounded">📞</button>
+            <button class="copy-btn bg-blue-100 px-3 py-1 rounded">📋</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right section -->
+      <aside class="w-1/3 space-y-4">
+        <!-- Stats -->
+        <div class="bg-white p-4 rounded shadow">
+          <p>❤️ Hearts: <span id="love-react">0</span></p>
+          <p>💰 Coins: <span id="coin-count">100</span></p>
+          <p>📋 Copies: <span id="copy-count">0</span></p>
         </div>
 
-        <!-- Card 3 -->
-        <div class="bg-white shadow-md rounded-md border border-red-700 p-4">
-          <h3 class="text-lg font-bold text-gray-800">Card 3</h3>
-          <p class="text-sm text-gray-500">This is another card.</p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="bg-white shadow-md rounded-md border border-red-700 p-4">
-          <h3 class="text-lg font-bold text-gray-800">Card 4</h3>
-          <p class="text-sm text-gray-500">This is another card.</p>
-        </div>
-      </div>
-
-      <!-- Right Section (One Full Row Card) -->
-      <aside class="col-span-1">
-        <div
-          class="h-full bg-white shadow-md rounded-md border border-red-700 p-6 flex flex-col"
-        >
-          <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
-            <i class="fa-regular fa-clock text-lg"></i> Full Row Sidebar Card
-          </h2>
-
-          <ul class="flex-1 space-y-3 overflow-y-auto text-gray-700">
-            <li class="border-b pb-2">
-              <p class="font-semibold">Police</p>
-              <span class="text-sm text-gray-500">999 • 11:25 AM</span>
-            </li>
-            <li class="border-b pb-2">
-              <p class="font-semibold">Ambulance</p>
-              <span class="text-sm text-gray-500">1994 • 11:10 AM</span>
-            </li>
-            <li class="border-b pb-2">
-              <p class="font-semibold">Fire</p>
-              <span class="text-sm text-gray-500">999 • 10:45 AM</span>
-            </li>
-            <li>
-              <p class="font-semibold">Rescue</p>
-              <span class="text-sm text-gray-500">108 • 10:30 AM</span>
-            </li>
-          </ul>
-
-          <button
-            class="mt-4 bg-[#00a63e] px-5 py-2 rounded-lg text-white text-lg hover:bg-green-700 transition"
-          >
-            Clear
-          </button>
+        <!-- Call History -->
+        <div class="bg-white p-4 rounded shadow">
+          <div class="flex justify-between items-center mb-2">
+            <h3 class="font-bold">📞 Call History</h3>
+            <button
+              id="clear-btn"
+              class="bg-red-500 text-white px-2 py-1 rounded text-sm"
+            >
+              Clear
+            </button>
+          </div>
+          <div id="call-history" class="space-y-3">
+            <!-- History items will appear here -->
+          </div>
         </div>
       </aside>
-    </section>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>

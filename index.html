@@ -12,6 +12,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="hind-madurai-light">
@@ -37,7 +44,7 @@
           <div
             class="flex items-center justify-center w-24 sm:w-28 h-10 sm:h-12 bg-[#41ff6b1a] rounded-3xl text-sm sm:text-base"
           >
-            <span class="font-bold">100</span>
+            <span class="font-bold" id="love-react">0</span>
             <img class="ml-1 w-6 h-6 sm:w-7 sm:h-7" src="assets/heart.png" />
           </div>
 
@@ -45,7 +52,7 @@
           <div
             class="flex items-center justify-center w-24 sm:w-28 h-10 sm:h-12 bg-[#41ff6b1a] rounded-3xl text-sm sm:text-base"
           >
-            <span class="font-bold">100</span>
+            <span class="font-bold" id="coin">100</span>
             <img class="ml-1 w-6 h-6 sm:w-7 sm:h-7" src="assets/coin.png" />
           </div>
 
@@ -85,43 +92,50 @@
         <div
           class="col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          <!-- card-1 -->
+          <!-- card-1 emergency -->
           <div class="bg-white shadow-md rounded-md p-4">
             <div class="flex justify-between items-center mb-4">
               <div class="p-3 bg-[#FFE3E2] rounded-xl">
                 <img class="h-12 w-12" src="./assets/emergency.png" alt="" />
               </div>
               <button
-                class="cursor-pointer text-gray-500 hover:text-red-500 transition"
+                class="love-btn cursor-pointer text-gray-500 hover:text-red-500 transition"
+                id="emergency-heart"
               >
                 <i class="fa-regular fa-heart text-3xl"></i>
               </button>
             </div>
-            <h3 class="text-lg font-bold text-gray-800">
+            <h3 class="text-lg font-bold text-gray-800" id="National">
               National Emergency Number
             </h3>
             <p class="text-sm text-gray-500">National Emergency</p>
             <div class="my-3">
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">999</h3>
+              <h3
+                class="text-2xl font-bold text-gray-900 mb-2"
+                id="call-number"
+              >
+                999
+              </h3>
               <span class="px-3 py-1 bg-gray-100 text-sm rounded-full"
                 >All</span
               >
             </div>
             <div class="flex flex-col sm:flex-row items-center gap-3 mt-4">
               <button
-                class="cursor-pointer flex items-center justify-center gap-2 py-2 px-4 border border-gray-400 rounded-lg w-full hover:bg-gray-100 hover:shadow-md hover:scale-105 transition"
+                class="copy-btn cursor-pointer flex items-center justify-center gap-2 py-2 px-4 border border-gray-400 rounded-lg w-full hover:bg-gray-100 hover:shadow-md hover:scale-105 transition"
               >
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
               <button
-                class="cursor-pointer flex items-center justify-center gap-2 py-2 px-4 rounded-lg text-white bg-[#00a63e] w-full hover:bg-green-700 hover:shadow-lg hover:scale-105 transition"
+                id="emergency-call"
+                class="call-btn cursor-pointer flex items-center justify-center gap-2 py-2 px-4 rounded-lg text-white bg-[#00a63e] w-full hover:bg-green-700 hover:shadow-lg hover:scale-105 transition"
               >
                 <i class="fa-solid fa-phone-volume"></i> Call
               </button>
             </div>
           </div>
 
-          <!-- card-2 -->
+          <!-- card-2 police-->
 
           <div class="bg-white shadow-md rounded-md p-4">
             <div class="flex justify-between items-center mb-4">
@@ -129,36 +143,43 @@
                 <img class="h-12 w-12" src="./assets/police.png" alt="" />
               </div>
               <button
-                class="cursor-pointer text-gray-500 hover:text-red-500 transition"
+                class="love-btn cursor-pointer text-gray-500 hover:text-red-500 transition"
+                id="police-heart"
               >
                 <i class="fa-regular fa-heart text-3xl"></i>
               </button>
             </div>
-            <h3 class="text-lg font-bold text-gray-800">
+            <h3 class="text-lg font-bold text-gray-800" id="Police-Helpline">
               Police Helpline Number
             </h3>
             <p class="text-sm text-gray-500">Police</p>
             <div class="my-3">
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">999</h3>
+              <h3
+                class="text-2xl font-bold text-gray-900 mb-2"
+                id="Police-number"
+              >
+                999
+              </h3>
               <span class="px-3 py-1 bg-gray-100 text-sm rounded-full"
                 >Police</span
               >
             </div>
             <div class="flex flex-col sm:flex-row items-center gap-3 mt-4">
               <button
-                class="cursor-pointer flex items-center justify-center gap-2 py-2 px-4 border border-gray-400 rounded-lg w-full hover:bg-gray-100 hover:shadow-md hover:scale-105 transition"
+                class="copy-btn cursor-pointer flex items-center justify-center gap-2 py-2 px-4 border border-gray-400 rounded-lg w-full hover:bg-gray-100 hover:shadow-md hover:scale-105 transition"
               >
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
               <button
-                class="cursor-pointer flex items-center justify-center gap-2 py-2 px-4 rounded-lg text-white bg-[#00a63e] w-full hover:bg-green-700 hover:shadow-lg hover:scale-105 transition"
+                id="police-call"
+                class="call-btn cursor-pointer flex items-center justify-center gap-2 py-2 px-4 rounded-lg text-white bg-[#00a63e] w-full hover:bg-green-700 hover:shadow-lg hover:scale-105 transition"
               >
                 <i class="fa-solid fa-phone-volume"></i> Call
               </button>
             </div>
           </div>
 
-          <!-- card-3  -->
+          <!-- card-3 Fire Service -->
 
           <div class="bg-white shadow-md rounded-md p-4">
             <div class="flex justify-between items-center mb-4">
@@ -166,7 +187,8 @@
                 <img class="h-12 w-12" src="./assets/fire-service.png" alt="" />
               </div>
               <button
-                class="cursor-pointer text-gray-500 hover:text-red-500 transition"
+                class="love-btn cursor-pointer text-gray-500 hover:text-red-500 transition"
+                id="fire-service"
               >
                 <i class="fa-regular fa-heart text-3xl"></i>
               </button>
@@ -181,12 +203,12 @@
             </div>
             <div class="flex flex-col sm:flex-row items-center gap-3 mt-4">
               <button
-                class="cursor-pointer flex items-center justify-center gap-2 py-2 px-4 border border-gray-400 rounded-lg w-full hover:bg-gray-100 hover:shadow-md hover:scale-105 transition"
+                class="copy-btn cursor-pointer flex items-center justify-center gap-2 py-2 px-4 border border-gray-400 rounded-lg w-full hover:bg-gray-100 hover:shadow-md hover:scale-105 transition"
               >
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
               <button
-                class="cursor-pointer flex items-center justify-center gap-2 py-2 px-4 rounded-lg text-white bg-[#00a63e] w-full hover:bg-green-700 hover:shadow-lg hover:scale-105 transition"
+                class="call-btn cursor-pointer flex items-center justify-center gap-2 py-2 px-4 rounded-lg text-white bg-[#00a63e] w-full hover:bg-green-700 hover:shadow-lg hover:scale-105 transition"
               >
                 <i class="fa-solid fa-phone-volume"></i> Call
               </button>
@@ -263,24 +285,22 @@
               </button>
             </div>
           </div>
-
-          <div class="bg-white shadow-md rounded-md p-4">Another Card</div>
-          <div class="bg-white shadow-md rounded-md p-4">Another Card</div>
-          <div class="bg-white shadow-md rounded-md p-4">Another Card</div>
-          <div class="bg-white shadow-md rounded-md p-4">Another Card</div>
-          <div class="bg-white shadow-md rounded-md p-4">Another Card</div>
         </div>
 
         <!-- Right-side  -->
         <aside
           class="col-span-1 bg-white shadow-md rounded-lg p-4 flex flex-col w-full mx-auto"
         >
-          <div class="flex justify-between items-center mb-4">
-            <div class="flex items-center gap-2">
+          <div
+            class="flex justify-between items-center mb-4"
+            id="history-section"
+          >
+            <div class="flex items-center gap-2" id="call-history">
               <i class="fa-regular fa-clock text-lg"></i>
               <span class="text-md font-semibold">Call History</span>
             </div>
             <button
+              id="clear-btn"
               class="cursor-pointer bg-[#00a63e] text-white text-sm px-5 py-2 rounded-lg font-medium shadow-md hover:bg-green-700 hover:shadow-lg hover:scale-110 transition-all duration-300 ease-in-out"
             >
               Clear
@@ -317,6 +337,30 @@
           </div>
         </aside>
       </section>
+
+      <!-- alert -->
+      <div role="alert" class="alert alert-vertical sm:alert-horizontal">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="stroke-info h-6 w-6 shrink-0"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+        <span>we use cookies for no reason.</span>
+        <div>
+          <button class="btn btn-sm">Deny</button>
+          <button class="btn btn-sm btn-primary">Accept</button>
+        </div>
+      </div>
     </main>
+
+    <script src="main.js"></script>
   </body>
 </html>
