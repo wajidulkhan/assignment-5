@@ -1,6 +1,7 @@
 let loveCount = 0;
 let coin = 10;
 const callValue = [];
+const notificationVales = document.getElementById("notification-id");
 
 function loveReact() {
   const Count = document.getElementById("love-react");
@@ -23,7 +24,6 @@ function callService(call, callNumber) {
 }
 
 function notification(values) {
-  const notificationVales = document.getElementById("notification-id");
   notificationVales.innerHTML = "";
   for (items of values) {
     const div = document.createElement("div");
@@ -31,7 +31,7 @@ function notification(values) {
     div.innerHTML = `
 
      <div
-              class="flex justify-between items-center bg-gray-100 rounded-lg p-3"
+              class="flex justify-between items-center bg-gray-100 rounded-lg p-3 noti"
             >
     <div>
                 <h3 class="text-sm font-semibold">${items.serviceName}</h3>
@@ -40,9 +40,15 @@ function notification(values) {
               <span class="text-sm text-gray-800">${items.Dates}</span>
             </div>
     </div>
+
     `;
 
-    notificationVales.appendChild(div);
+    notificationVales.prepend(div);
+
+    if (notificationVales.childElementCount > 7) {
+      notificationVales.removeChild(notificationVales.lastChild);
+    }
+    // notificationVales.appendChild(div);
   }
 }
 
@@ -81,4 +87,9 @@ document.getElementById("police-call").addEventListener("click", function (e) {
   };
   callValue.push(callData);
   notification(callValue);
+});
+
+// clear - Btn;
+document.getElementById("clear-btn").addEventListener("click", function () {
+  notificationVales.innerHTML = "";
 });
