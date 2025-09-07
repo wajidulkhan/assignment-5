@@ -1,6 +1,7 @@
 let loveCount = 0;
 let coin = 10;
 const callValue = [];
+let copy = 10;
 const notificationVales = document.getElementById("notification-id");
 
 function loveReact() {
@@ -52,9 +53,32 @@ function notification(values) {
   }
 }
 
+// copy Function
+function copyFunction(id) {
+  if (copy > 0) {
+    const copyText = document.getElementById(id);
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.innerText);
+    // Alert the copied text
+    alert("Copied the text: " + copyText.innerText);
+    copy--;
+    document.getElementById("copy-number").innerText = copy;
+  } else {
+    alert("copy are available now");
+  }
+}
+
+document.getElementById("copy-number").innerText = copy;
+
 // Heart
 document.getElementById("emergency-heart").addEventListener("click", loveReact);
 document.getElementById("police-heart").addEventListener("click", loveReact);
+document.getElementById("fire-service").addEventListener("click", loveReact);
+document.getElementById("fire-service").addEventListener("click", loveReact);
+document.getElementById("fire-service").addEventListener("click", loveReact);
+document.getElementById("fire-service").addEventListener("click", loveReact);
+document.getElementById("fire-service").addEventListener("click", loveReact);
+document.getElementById("fire-service").addEventListener("click", loveReact);
 document.getElementById("fire-service").addEventListener("click", loveReact);
 
 // call
@@ -92,4 +116,8 @@ document.getElementById("police-call").addEventListener("click", function (e) {
 // clear - Btn;
 document.getElementById("clear-btn").addEventListener("click", function () {
   notificationVales.innerHTML = "";
+});
+
+document.getElementById("copy-national").addEventListener("click", function () {
+  copyFunction("call-number");
 });
